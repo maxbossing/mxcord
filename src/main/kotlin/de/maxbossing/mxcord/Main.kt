@@ -11,6 +11,7 @@ import io.ktor.client.*
 import io.ktor.client.engine.cio.*
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.OnlineStatus
+import net.dv8tion.jda.api.entities.Activity
 import net.dv8tion.jda.api.requests.GatewayIntent
 import java.io.File
 import kotlin.system.exitProcess
@@ -38,6 +39,7 @@ class Main() {
 
         JDA = default(ConfigManager.credentials.dcToken, enableCoroutines = true) {
             intents += GatewayIntent.MESSAGE_CONTENT
+            setActivity(Activity.playing("v${this.javaClass.`package`.implementationVersion}"))
         }
         jdaInitialized = true
         info("JDA Instance Initialized")
@@ -50,6 +52,8 @@ class Main() {
 
         ListenerManager
         info("Listeners Initialized")
+
+        info("Bot is online!")
 
         consoleInputLoop()
     }
@@ -87,7 +91,7 @@ class Main() {
                     err("Unknown command", false)
                     err("Possible commands:", false)
                     err(" - config <reload | save>", false)
-                    err(" - shutdown")
+                    err(" - shutdown", false)
                 }
 
             }

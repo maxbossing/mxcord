@@ -1,3 +1,4 @@
+@file:Suppress("unused")
 package de.maxbossing.mxcord.modules.pastes
 
 import de.maxbossing.mxcord.client
@@ -14,7 +15,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 
 object Uploader {
 
-    val messagelistener = jda.listener<MessageReceivedEvent> {
+    val messageListener = jda.listener<MessageReceivedEvent> {
 
         if (it.author.isBot)
             return@listener

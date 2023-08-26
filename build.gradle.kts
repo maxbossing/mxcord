@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "de.maxbossing"
-version = "2"
+version = "3"
 
 repositories {
     mavenCentral()
@@ -50,6 +50,7 @@ tasks {
     jar {
         manifest {
             attributes["Main-Class"] = "de.maxbossing.mxcord.MainKt"
+            attributes["Implementation-Version"] = version
         }
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE

@@ -1,7 +1,9 @@
 package de.maxbossing.mxcord.utils.manager
 
 import de.maxbossing.mxcord.jda
+import de.maxbossing.mxcord.modules.letMeGoogleThat.LMGTCommand
 import de.maxbossing.mxcord.modules.pastes.PastesCommand
+import de.maxbossing.mxcord.modules.ping.PingCommand
 import de.maxbossing.mxcord.utils.entities.SlashCommandEvent
 import de.maxbossing.mxcord.utils.info
 import dev.minn.jda.ktx.events.listener
@@ -16,7 +18,9 @@ import net.dv8tion.jda.api.interactions.commands.OptionType
  */
 object SlashCommandManager {
     private val commands = mapOf<String, SlashCommandEvent>(
-        "pastes" to PastesCommand
+        "pastes" to PastesCommand,
+        "letmegooglethat" to LMGTCommand,
+        "ping" to PingCommand
     )
 
     fun startManager(jda: JDA) {
@@ -32,7 +36,11 @@ object SlashCommandManager {
         jda.updateCommands()
             .addCommands(
                 Command("pastes", "output a paste from pastes.dev in the channel")
-                    .addOption(OptionType.STRING, "id", "the id of the paste")
+                    .addOption(OptionType.STRING, "id", "the id of the paste"),
+                Command("letmegooglethat", "sends a lmgtfy link with the question in chat. Mention optional")
+                    .addOption(OptionType.STRING, "question", "The question to google")
+                    .addOption(OptionType.USER, "ping", "fill in the user which should be pinged with the link. Black disables ping"),
+                Command("ping", "Returns the bots Gateway and REST ping.")
             )
             .queue()
     }

@@ -1,3 +1,4 @@
+@file:Suppress("unused")
 package de.maxbossing.mxcord.modules.messageReactor
 
 import de.maxbossing.mxcord.jda
