@@ -2,6 +2,7 @@ package de.maxbossing.mxcord.modules.pastes
 
 import de.maxbossing.mxcord.client
 import de.maxbossing.mxcord.jda
+import de.maxbossing.mxcord.utils.info
 import dev.minn.jda.ktx.events.listener
 import dev.minn.jda.ktx.messages.send
 import io.ktor.client.call.*
@@ -27,12 +28,7 @@ object Uploader {
         var type = it.message.contentRaw.split("\n")[0].removePrefix("```")
         if (type == "") type = "plain"
 
-        println(type)
-
         val pasteContent = content.removePrefix("```$type").removeSuffix("```")
-
-        println(pasteContent)
-
 
         val response = client.request("https://api.pastes.dev/post") {
             method = HttpMethod.Post
@@ -46,5 +42,6 @@ object Uploader {
 
         it.message.delete().queue()
         it.channel.send("Your code was uploaded to $url to make it easier to read the channel!").queue()
+        info("Uploaded ${it.message.jumpUrl} to `$url`")
     }
 }

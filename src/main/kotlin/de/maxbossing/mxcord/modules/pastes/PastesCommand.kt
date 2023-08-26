@@ -35,6 +35,6 @@ object PastesCommand: SlashCommandEvent {
 
         it.hook.send("```${headers["content-type"]!!.split("/")[1].split(";")[0]}\n$text\n```").setEphemeral(false).queue()
 
-        info("Paste `$id` sent into ${(it.channel as TextChannel).jumpUrl} on reuqest of ${it.user.asMention}")
+        info("Paste `$id` sent into ${(it.channel as TextChannel).jumpUrl} on request of ${it.user.asMention}")
     }
 }
