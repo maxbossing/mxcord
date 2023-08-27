@@ -1,6 +1,7 @@
 package de.maxbossing.mxcord.utils.manager
 
 import de.maxbossing.mxcord.jda
+import de.maxbossing.mxcord.modules.ipLookup.IPLookupCommand
 import de.maxbossing.mxcord.modules.letMeGoogleThat.LMGTCommand
 import de.maxbossing.mxcord.modules.pastes.PastesCommand
 import de.maxbossing.mxcord.modules.ping.PingCommand
@@ -20,7 +21,8 @@ object SlashCommandManager {
     private val commands = mapOf<String, SlashCommandEvent>(
         "pastes" to PastesCommand,
         "letmegooglethat" to LMGTCommand,
-        "ping" to PingCommand
+        "ping" to PingCommand,
+        "iplookup" to IPLookupCommand
     )
 
     fun startManager(jda: JDA) {
@@ -40,7 +42,9 @@ object SlashCommandManager {
                 Command("letmegooglethat", "sends a lmgtfy link with the question in chat. Mention optional")
                     .addOption(OptionType.STRING, "question", "The question to google")
                     .addOption(OptionType.USER, "ping", "fill in the user which should be pinged with the link. Black disables ping"),
-                Command("ping", "Returns the bots Gateway and REST ping.")
+                Command("ping", "Returns the bots Gateway and REST ping."),
+                Command("iplookup", "Perform a non-authoritative nameserver lookup")
+                    .addOption(OptionType.STRING, "domain", "The domain to perform the lookup on")
             )
             .queue()
     }

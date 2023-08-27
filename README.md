@@ -9,6 +9,7 @@
 * Auto-upload code blocks to pastes.dev to de-clutter the chat
 * Letmegooglethat command
 * Ping command
+* Non-Authoritative nameserver lookup on domain names
 
 ## TODO
 * Remove link embeds
