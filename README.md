@@ -22,6 +22,9 @@
 
 
 ## Running the bot
+> **DISCLAIMER** I do not guarantee that this will not turn into a steaming pile of hot garbage for whatever reason,
+> Sometimes he just goes "You know what, fuck this person im not shutting down"
+
 1. Place the newest release in a folder
 2. Create a folder named `config`
 3. create the files `credentials.json` and `settings.json` in the folder `config`
