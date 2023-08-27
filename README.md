@@ -10,9 +10,16 @@
 * Letmegooglethat command
 * Ping command
 * Non-Authoritative nameserver lookup on domain names
+* Meme generator
+* Random quote generator
+* DnD Style dice roller
+* Coin Toss
 
 ## TODO
 * Remove link embeds
+* urban dictionary lookup
+* random fortune in cowsay
+
 
 ## Running the bot
 1. Place the newest release in a folder

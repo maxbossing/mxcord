@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "de.maxbossing"
-version = "4"
+version = 6
 
 repositories {
     mavenCentral()
@@ -29,9 +29,10 @@ dependencies {
     implementation("org.slf4j", "slf4j-simple", "1.7.36")
 
     //Ktor
-    implementation("io.ktor","ktor-client-core","2.3.3")
-    implementation("io.ktor","ktor-client-cio","2.3.3")
-    implementation("io.ktor","ktor-client-content-negotiation","2.3.3")
+    implementation("io.ktor", "ktor-client-core", "2.3.3")
+    implementation("io.ktor", "ktor-client-cio", "2.3.3")
+    implementation("io.ktor", "ktor-client-content-negotiation", "2.3.3")
+    implementation("io.ktor", "ktor-serialization-kotlinx-json", "2.3.3")
 
 
 }

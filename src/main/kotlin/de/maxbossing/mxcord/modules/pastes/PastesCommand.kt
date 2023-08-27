@@ -31,7 +31,6 @@ object PastesCommand: SlashCommandEvent {
             it.hook.send("An unknow error occurred!").setEphemeral(true).queue()
             return
         }
-        print(headers["content-type"]!!.split("/")[0])
 
         it.hook.send("```${headers["content-type"]!!.split("/")[1].split(";")[0]}\n$text\n```").setEphemeral(false).queue()
 
